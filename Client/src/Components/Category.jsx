@@ -1,7 +1,22 @@
 import React, { useEffect, useState } from "react";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
+import CardDisplay from "./CardDisplay";
 
 const Category = () => {
+  return (
+    <div>
+      <div>
+        <ControlledTabsExample />
+      </div>
+    </div>
+  );
+};
+
+function ControlledTabsExample() {
   const [data, setData] = useState([]);
+
+  const [key, setKey] = useState("home");
   useEffect(() => {
     console.log("you entered in the right place");
     const getData = async () => {
@@ -14,18 +29,25 @@ const Category = () => {
   }, []);
 
   return (
-    <div>
-      <div className="grid grid-cols-3 ">
-        {data.map((value) => {
-          return (
-            <li className="list-none border border-red-500">
-              {value.category}
-            </li>
-          );
-        })}
-      </div>
-    </div>
+    <Tabs
+      id="controlled-tab-example"
+      activeKey={key}
+      onSelect={(k) => setKey(k)}
+      className="mb-3"
+      fill
+    >
+      {data.map((value) => {
+        const { id, category } = value;
+        console.log(id, category);
+
+        return (
+          <Tab className="" eventKey={id} title={category}>
+            <CardDisplay />
+          </Tab>
+        );
+      })}
+    </Tabs>
   );
-};
+}
 
 export default Category;

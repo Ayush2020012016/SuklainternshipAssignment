@@ -1,0 +1,17 @@
+.card {
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    border: 2px solid red;
+}
+
+.overflow {
+    width: 100%;
+    height: 90px;
+}
+
+.overflow img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}

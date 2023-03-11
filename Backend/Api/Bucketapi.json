@@ -1,0 +1,16 @@
+ [
+    {
+        "id":1,
+        "category":"Enterntainment"
+    },
+
+    {
+        "id":2,
+        "category":"Education"
+    },
+
+    {
+        "id":3,
+        "category":"Finance"
+    }
+]
